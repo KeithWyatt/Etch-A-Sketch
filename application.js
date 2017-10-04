@@ -28,7 +28,7 @@ $(document).ready(function(){
         }
 
         $('.pixel').css({
-            height: pixelSize,
+        height: pixelSize,
             width: pixelSize
         });
         
@@ -51,9 +51,10 @@ $(document).ready(function(){
                 $pixelColour = "blue";
                 break;
             case 'clear' :
+                $('.pixel').css({"opacity": 0});
                 break;
         }
-        $('.pixel').css({"background-color" : $pixelColour, "opacity": 0});
+        
     });
 
     createGrid(sizeOfGrid, gridLength);
