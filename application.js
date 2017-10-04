@@ -35,6 +35,11 @@ $(document).ready(function(){
     
 
         $('.pixel').hover(function(){
+            if($(this).css("background-color") !== $pixelColour){
+                $(this).css({"background-color": $pixelColour, "opacity": 0});
+                console.log($(this).css("background-color"));
+                console.log($pixelColour);
+            }
             $(this).css({"background-color": $pixelColour, "opacity": "+=0.20"});
         });
     }
@@ -42,18 +47,19 @@ $(document).ready(function(){
     $('button').click(function(){
         switch(this.id){
             case 'red' :
-                $pixelColour = "red";
+                $pixelColour = "rgb(255, 0, 0)";
                 break;
             case 'black' :
-                $pixelColour = "black";
+                $pixelColour = "rgb(0, 0, 0)";
                 break;
             case 'blue' :
-                $pixelColour = "blue";
+                $pixelColour = "rgb(0, 0, 255)";
                 break;
             case 'clear' :
                 $('.pixel').css({"opacity": 0});
                 break;
         }
+        
         
     });
 
